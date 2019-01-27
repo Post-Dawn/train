@@ -24,40 +24,37 @@ def get_random_pairs(self, n):
         return pairs, delta
     
 
-def get_words(self, min_count):
-        self.input_file = open(self.input_file_name)
-        self.sentence_length = 0
-        self.sentence_count = 0
-
-
-        word_temp_1 = dict()
-        for line in self.input_file:
-            self.sentence_count += 1
-            line = line.strip().split(' ')
-            self.sentence_length += len(line)
-            for w in line:
-                try:
-                    word_temp_1[w] += 1
-                except:
-                    word_temp_1[w] = 1
-        word_temp_2=[]
-        for key in word_temp_1:
-            word_temp_2.append(tuple([int(key),word_temp_1[key]]))
+def get_words(input_file_name,min_count):
+    input_file = open(input_file_name)
+    sentence_length = 0
+    sentence_count = 0
+    word_temp_1 = dict()
+    for line in input_file:
+        sentence_count += 1
+        line = line.strip().split(' ')
+        sentence_length += len(line)
+        for w in line:
+            try:
+                word_temp_1[w] += 1
+            except:
+                word_temp_1[w] = 1
+    word_temp_2=[]
+    for key in word_temp_1:
+        word_temp_2.append(tuple([int(key),word_temp_1[key]]))
         
-        
-        self.word2id = dict()
-        self.id2word = dict()
-        wid = 0
-        self.word_frequency = dict()
-        for w, c in word_temp_1.items():
-            if c < min_count:
-                self.sentence_length -= c
-                continue
-            self.word2id[w] = wid
-            self.id2word[wid] = w
-            self.word_frequency[wid] = c
-            wid += 1
-        self.word_count = len(self.word2id)
+    word2id = dict()
+    id2word = dict()
+    wid = 0
+    word_frequency = dict()
+    for w, c in word_temp_1.items():
+        if c < min_count:
+            self.sentence_length -= c
+            continue
+        self.word2id[w] = wid
+        self.id2word[wid] = w
+        self.word_frequency[wid] = c
+        wid += 1
+    self.word_count = len(self.word2id)
 
 def init_sample_table(self):
         self.sample_table = []
