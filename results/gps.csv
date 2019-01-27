@@ -1,0 +1,19 @@
+method,ks,recall,precision ,f1
+dw_margin_50_gps_dim_20_rneg,0.16,0.73,0.14,0.23
+dw_margin_30_gps_dim_20_rneg,0.16,0.7,0.14,0.23
+dw_margin_100_gps_dim_20_rneg,0.15,0.71,0.14,0.23
+Node2vec_p0.5q1_batch100_epoch100.txt,0.15,0.7,0.14,0.23
+LINE_epoch2000_batch100_norm.txt,0.14,0.68,0.14,0.23
+LINE_epoch4000_batch100_norm.txt,0.14,0.68,0.14,0.22
+Node2vec_p0.5q1_batch100_epoch400.txt,0.14,0.65,0.14,0.22
+LINE_epoch1000_batch100_norm.txt,0.14,0.63,0.14,0.23
+Node2vec_p1q1_batch100_epoch400.txt,0.14,0.62,0.14,0.22
+S2V_NEG_hop6_epoch400_batch50.txt,0.14,0.58,0.14,0.22
+dw_margin_5_gps_dim_20_rneg,0.13,0.66,0.13,0.22
+dw_margin_10_gps_dim_20_rneg,0.13,0.64,0.14,0.22
+Node2vec_p1q1_batch100_epoch100.txt,0.13,0.64,0.13,0.22
+S2V_NEG_hop4_epoch200_batch50.txt,0.12,0.67,0.13,0.22
+dw_margin_1_gps_dim_20_rneg,0.11,0.66,0.13,0.22
+dw_gps_dim_20,0.11,0.66,0.13,0.22
+S2V_hop4_epoch100_batch100.txt,0.08,0.56,0.13,0.2
+LINE_epoch2000_batch100_NOnorm.txt,0.06,0.47,0.13,0.18

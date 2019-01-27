@@ -1,0 +1,18 @@
+*.xml
+.idea/
+*.pyc
+embedding
+embedding/
+output/*
+train_set.txt
+train_set_emb.txt
+train_set.txt
+train_set.txt
+Untitled.ipynb
+test.ipynb
+graph/label_os.csv
+graph/label_is.csv
+1. jieshu_GPS classification.ipynb
+.ipynb_checkpoints/Untitled-checkpoint.ipynb
+.ipynb_checkpoints/test-checkpoint.ipynb
+.ipynb_checkpoints/1. jieshu_GPS classification-checkpoint.ipynb

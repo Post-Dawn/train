@@ -1,0 +1,86 @@
+\def\year{2019}\relax
+%File: formatting-instruction.tex
+\documentclass[letterpaper]{article} %DO NOT CHANGE THIS
+\usepackage{aaai19}  %Required
+\usepackage{times}  %Required
+\usepackage{helvet}  %Required
+\usepackage{courier}  %Required
+\usepackage{url}  %Required
+\usepackage{graphicx}  %Required
+\frenchspacing  %Required
+\setlength{\pdfpagewidth}{8.5in}  %Required
+\setlength{\pdfpageheight}{11in}  %Required
+\pdfinfo{
+	/Title (2019 Formatting Instructions for Authors Using LaTeX)
+	/Author (AAAI Press Staff)}
+\setcounter{secnumdepth}{0}  
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{verbatim}
+\usepackage{multirow}
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{algorithm, algorithmic}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{subfigure}
+\usepackage{balance}
+\usepackage{multicol}
+\usepackage{color}
+\usepackage{epsfig}
+\usepackage{natbib}
+\usepackage{xspace}
+\usepackage{booktabs}
+\usepackage{bm}
+\usepackage{enumitem}
+
+
+\newcommand{\boldtext}[1]{\textbf{ #1 }}
+\newcommand{\wenjie}[1]{\textbf{\color{blue}[** #1 **]}}
+\newcommand{\reminder}[1]{\textbf{\color{red}[** #1 **]}}  % to fix
+\newcommand{\hide}[1]{} %hide
+\newcommand{\vpara}[1]{\vspace{0.1in}\noindent\textbf{#1 }}
+\newcommand{\para}[1]{\vspace{0.01in}\noindent\textbf{#1 }}
+\newcommand{\secref}[1]{Section~\ref{#1}} %section reference
+\newcommand{\alref}[1]{Algorithm~\ref{#1}} %algorithm reference
+\newcommand{\Real}{\ensure{\mathbb{R}}}  % Real numbers
+\newcommand{\figref}[1]{Figure~\ref{#1}} %section reference
+\newcommand{\tableref}[1]{Table~\ref{#1}} 
+\newcommand{\beq}[1]{\vspace{-0.01in}\begin{equation}#1\end{equation}\vspace{-0.01in}}
+\newcommand{\beqn}[1]{\vspace{-0.01in}\begin{eqnarray}#1\end{eqnarray}\vspace{-0.01in}}
+\newcommand{\besp}[1]{\begin{split}#1\end{split}}
+\newcommand{\beal}[1]{\vspace{-0.03in}\begin{align}#1\end{align}\vspace{-0.03in}}
+
+\newtheorem{definition}{Definition}
+
+%\setcounter{secnumdepth}{3}
+
+
+\title{Task-Aware Network Embedding: Leveraging Network Connectivity and Structural Similarity}
+\author{AAAI Press\\
+	Association for the Advancement of Artificial Intelligence\\
+	2275 East Bayshore Road, Suite 160\\
+	Palo Alto, California 94303\\
+}
+
+\begin{document}
+	
+\maketitle
+
+\input{abstract.tex}
+\input{intro.tex}
+\input{related.tex}
+\input{problem.tex}
+\input{model.tex}
+\input{exp.tex}
+\input{conclusion.tex}
+
+\pagebreak
+\balance
+\bibliographystyle{named}
+\bibliography{reference}
+
+\end{document}
+
