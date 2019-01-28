@@ -71,15 +71,6 @@ def get_words(input_file_name,min_count):
 
 
 if __name__ == '__main__':
-    '''w2v = Word2Vec(input_file_name='corpus.txt', 
-                output_file_name="output",
-                min_count=1,
-                iteration=15,
-                margin=20,
-                batch_size=64,
-                emb_dimension=20)'''
-
-
     input_file_name="corpus.txt"
     min_count=1
     output_file_name="output"
@@ -90,19 +81,15 @@ if __name__ == '__main__':
     print('Word Count: %d' % len(word2id))
     print('Sentence Length: %d' % (sentence_length))
     
-    
-    
-    
-    
-    '''output_file_name = output_file_name
-    emb_size = len(self.data.word2id)
-    emb_dimension = emb_dimension
-    batch_size = batch_size
+    output_file_name = output_file_name
+    emb_size = len(word2id)
+    emb_dimension = 20
+    batch_size = 64
     window_size = window_size
-    iteration = iteration
+    iteration = 15
     initial_lr = initial_lr
     skip_gram_model = SkipGramModel(emb_size, emb_dimension)
-    margin = margin
+    margin = 20
     use_cuda = torch.cuda.is_available()
     if use_cuda:
         skip_gram_model.cuda()
@@ -112,4 +99,4 @@ if __name__ == '__main__':
     if label_file is not None:
         data.get_labels(label_file)
     
-    w2v.train()'''
+    w2v.train()
