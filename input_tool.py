@@ -73,7 +73,7 @@ def init_sample_table(self):
     # @profile
 def get_batch_pairs(self, batch_size, window_size):
         while len(self.word_pair_catch) < batch_size:
-            sentence = self.input_file.readline()
+            sentence = self.z.readline()
             if sentence is None or sentence == '':
                 self.input_file = open(self.input_file_name)
                 sentence = self.input_file.readline()
