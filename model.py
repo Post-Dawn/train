@@ -13,7 +13,7 @@ class SkipGramModel(nn.Module):
         v_embedding: Embedding for neibor words.
     """
 
-    def __init__(self, emb_size, emb_dimension):
+    def __init__(self, emb_size, emb_dimension,list_u,list_v):
         """Initialize model parameters.
 
         Apply for two embedding layers.
@@ -31,7 +31,7 @@ class SkipGramModel(nn.Module):
         self.emb_dimension = emb_dimension
         self.u_embeddings = nn.Embedding(emb_size, emb_dimension, sparse=True)
         self.v_embeddings = nn.Embedding(emb_size, emb_dimension, sparse=True)
-        self.init_emb()
+        self.init_emb(list_u,list_v)
 
     def init_emb(self):
         """Initialize embedding weight like word2vec.
