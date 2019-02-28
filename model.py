@@ -33,7 +33,7 @@ class SkipGramModel(nn.Module):
         self.v_embeddings = nn.Embedding(emb_size, emb_dimension, sparse=True)
         self.init_emb(list_u,list_v)
 
-    def init_emb(self):
+    def init_emb(self, list_u, list_v):
         """Initialize embedding weight like word2vec.
 
         The u_embedding is a uniform distribution in [-0.5/em_size, 0.5/emb_size], and the elements of v_embedding are zeroes.
@@ -41,9 +41,8 @@ class SkipGramModel(nn.Module):
         Returns:
             None
         """
-        initrange = 0.5 / self.emb_dimension
-        self.u_embeddings.weight.data.uniform_(-initrange, initrange)
-        self.v_embeddings.weight.data.uniform_(-0, 0)
+        self.u_embeddings.weight.data = torch.Tensor(list_u)
+        self.v_embeddings.weight.data = torch.Tensor(list_v)
 
     def det_forward(self, pos_u, pos_v, neg_v):
         emb_u = self.u_embeddings(pos_u)

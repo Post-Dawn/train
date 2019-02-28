@@ -160,7 +160,7 @@ def transform(x):
         u.append(list(x[i]))
         v.append(list(x[emb_size+i]))
 
-    skip_gram_model = SkipGramModel(emb_size, emb_dimension,u,v)
+    skip_gram_model = SkipGramModel(emb_size, emb_dimension, u, v)
     optimizer = optim.SGD(skip_gram_model.parameters(), lr=0.025)
 
     pos_u=list(x[2*emb_size])
@@ -174,7 +174,7 @@ def transform(x):
     loss = skip_gram_model.forward(pos_u, pos_v, neg_v)
     loss.backward()
     optimizer.step()
-    loss_avg = 0.95 * loss_avg + 0.05 * loss.item() / batch_size
+    #loss_avg = 0.95 * loss_avg + 0.05 * loss.item() / batch_size
 
     result_u = skip_gram_model.u_embeddings.weight.detach().numpy()
     result_v = skip_gram_model.v_embeddings.weight.detach().numpy()
@@ -259,7 +259,7 @@ if __name__ == '__main__':
         xx.append(tuple(now))
     print(tuple(xx))'''
 
-    origin_matrix = matrix2rdd(origin_mid_u,origin_mid_v,num_batch)
+    origin_matrix = matrix2rdd(origin_mid_u,origin_mid_v,1)
     origin_matrix_rdd= sc.parallelize(origin_matrix)
 
     #print(origin_matrix_rdd.map(plus).collect())
@@ -269,9 +269,10 @@ if __name__ == '__main__':
     pos_v=list(x[2*emb_size+1])
     neg_v=list(x[2*emb_size+2])'''
 
-    for i in range(total_cycle):
-        next_matrix=origin_matrix_rdd.map(transform)
-        
+    #for i in range(total_cycle):
+    
+    matrix=origin_matrix_rdd.map(transform).collect()
+    print(matrix)
 
 
     #origin_u=tuple(origin_u)
