@@ -1,16 +1,8 @@
-import torch.nn as nn
-import torch.optim as optim
-import torch.nn.functional as F
-import torch
 import numpy as np
 import matplotlib.pyplot as plt
 import time
 from six import iterkeys
 
-import torch
-import torch.nn as nn
-import torch.nn.functional as F
-from frame import Word2Vec
 import random
 from random import shuffle
 

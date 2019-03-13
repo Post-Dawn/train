@@ -1,3 +1,6 @@
+#pos_u = tuple(pair[0] for pair in pos_pairs)from pyspark.sql import SparkSession
+#spark = SparkSession.builder.master('local').appName('test').getOrCreate()
+import numpy as np
 '''import findspark
 findspark.init()
 from pyspark import SparkContext
@@ -27,8 +30,12 @@ print(torch.ones(3))'''
 #skip_gram_model.u_embeddings.weight = a
 #skip_gram_model.v_embeddings.weight.data=torch.Tensor(a)
 #print(skip_gram_model.v_embeddings.weight)
-import torch
+'''import torch
 import torch.nn as nn
 embedding = nn.Embedding(10, 3)
 input = torch.FloatTensor([[1,2,4,5],[4,3,2,9]])
-print(input)
+print(input)'''
+x=np.array([1,2,3])
+y= [1,2]
+z=np.outer(y,x)
+print(z)
