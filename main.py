@@ -193,11 +193,11 @@ def transform(x):
     d1 = np.dot(d2,y_softmax)
 
     for i in range(emb_dimension):
-        u[pos_u][i]=u[pos_u][i]+d1[i]
+        u[pos_u][i]=u[pos_u][i]+d1[i]*initial_lr
     
     for i in range(emb_dimension):
         for j in range(emb_size):
-            v[i][j]=v[i][j]+d2[i][j]
+            v[i][j]=v[i][j]+d2[i][j]*initial_lr
     v=v.T
     result = []
     result.append(u.tolist())
@@ -227,8 +227,8 @@ if __name__ == '__main__':
     batch_size = 64
     window_size = 5
     iteration = 15
-    '''initial_lr = initial_lr
-    skip_gram_model = SkipGramModel(emb_size, emb_dimension)
+    initial_lr = 0.01
+    '''skip_gram_model = SkipGramModel(emb_size, emb_dimension)
     margin = 20
     optimizer = optim.SGD(self.skip_gram_model.parameters(), lr=self.initial_lr)'''
 
